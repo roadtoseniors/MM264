@@ -40,7 +40,7 @@ namespace MM264
 
         public async Task<bool> Auth(string login,  string password)
         {
-            var request = new HttpRequestMessage(HttpMethod.Post, "http://192.168.0.15:5000/auth/login");
+            var request = new HttpRequestMessage(HttpMethod.Post, "http://localhost:5000/auth/login");
             var json = JsonSerializer.Serialize(new { Login = login, Password = password });
             var content = new StringContent(json, null, "application/json");
             request.Content = content;
@@ -60,7 +60,7 @@ namespace MM264
 
         public async Task<List<VendingMachine>> GetVendingMachines()
         {
-            var request = new HttpRequestMessage(HttpMethod.Get, "http://192.168.0.15:5000/api/vendingmachines");
+            var request = new HttpRequestMessage(HttpMethod.Get, "http://localhost:5000/api/vendingmachines");
             var response = await Client.SendAsync(request);
             if (response.StatusCode == HttpStatusCode.OK)
             {

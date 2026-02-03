@@ -16,7 +16,6 @@ builder.Services.AddOpenApi();
 builder.Services.AddDbContext<MyDbContext>();
 builder.Services.AddCors();
 
-builder.WebHost.UseUrls("http://0.0.0.0:5000");
 
 
 
@@ -63,6 +62,43 @@ app.MapPost("/auth/login", (AuthData data, MyDbContext cnt) =>
         return Results.Unauthorized();
     }
 });
+
+//builder.Services.AddAuthorization();
+//builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+//    .AddJwtBearer(options =>
+//    {
+//        options.TokenValidationParameters = new TokenValidationParameters
+//        {
+//            ValidateIssuer = true,
+//            ValidIssuer = AuthOptions.ISSUER,
+//            ValidateAudience = true,
+//            ValidAudience = AuthOptions.AUDIENCE,
+//            ValidateLifetime = true,
+//            IssuerSigningKey = AuthOptions.GetSymmetricSecurityKey(),
+//            ValidateIssuerSigningKey = true,
+//        };
+//    });
+
+//app.UseAuthentication();
+//app.UseAuthorization();
+
+//app.MapPost("/auth/login", (AuthData data, MyDbContext cnt) =>
+//{
+//    User user = cnt.Users.FirstOrDefault(u => u.Login==data.Login && u.Password==data.Password);
+//    if (user != null)
+//    {
+//        var claims = new List<Claim> { new Claim(ClaimTypes.Name, data.Login) };
+
+//        var jwt = new JwtSecurityToken(
+//            issuer: AuthOptions.ISSUER,
+//            audience: AuthOptions.AUDIENCE,
+//            claims: claims,
+//            expires: DateTime.UtcNow.Add(TimeSpan.FromHours(24)),
+//            signingCredentials: new SigningCredentials(AuthOptions.GetSymmetricSecurityKey(), SecurityAlgorithms.HmacSha256),
+//            );
+//        return Results.Ok(new { User = user, Token = new JwtSecurityTokenHandler().WriteToken(jwt) });
+//    }
+//});
 
 if (app.Environment.IsDevelopment())
 {
