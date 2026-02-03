@@ -1,0 +1,21 @@
+﻿<wpflikeavalonianavigation:Page xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:wpflikeavalonianavigation="using:WpfLikeAvaloniaNavigation"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="MM264.Calendar">
+    <Grid RowDefinitions="Auto, Auto, *" Margin="16">
+		<TextBlock Text="Календарь обслуживания" FontSize="20" FontWeight="Bold" Margin="0,0,0,12"/>
+        <StackPanel Orientation="Horizontal" Spacing="12" Margin="0,30,0,0">
+			<StackPanel Orientation="Horizontal" Spacing="10" Margin="0,0,0,10">
+				<Button x:Name="Week" Click="Week_Click" Content="Неделя" Width="100" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <Button x:Name="Month" Click="Month_Click" Content="Месяц" Width="100" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <Button x:Name="Yaer" Click="Yaer_Click" Content="Год" Width="100" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+            </StackPanel>
+        </StackPanel>
+        <Border BorderBrush="Gray" CornerRadius="6" BorderThickness="1" Grid.Row="2">
+			<wpflikeavalonianavigation:Frame x:Name="CalendarFrame"/>
+        </Border>
+    </Grid>
+</wpflikeavalonianavigation:Page>

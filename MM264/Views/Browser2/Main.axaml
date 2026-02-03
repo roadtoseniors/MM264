@@ -1,0 +1,16 @@
+﻿<wpflikeavalonianavigation:Page xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:wpflikeavalonianavigation="using:WpfLikeAvaloniaNavigation"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="MM264.Main">
+    <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+		<TextBlock Text="Панель управления франчайзера" FontSize="30" FontWeight="SemiBold" Margin="20,20,20,20"/>
+        <StackPanel Orientation="Vertical" Spacing="10" VerticalAlignment="Center" HorizontalAlignment="Center">
+			<Button x:Name="Vending" Width="200" Background="LightGreen" Content="Торговые автоматы" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="Vending_Click"/>
+            <Button x:Name="Calendar" Width="200" Background="LightGreen" Content="Календарь обслуживания" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="Calendar_Click"/>
+            <Button x:Name="Grafic" Width="200" Background="LightGreen" Content="График работ" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="Grafic_Click"/>
+        </StackPanel>
+    </StackPanel>
+</wpflikeavalonianavigation:Page>

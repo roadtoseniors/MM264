@@ -29,7 +29,7 @@ public partial class App : Application
         {
             if (OperatingSystem.IsBrowser())
             {
-                singleViewPlatform.MainView = new WebMainPage();
+                singleViewPlatform.MainView = new WebFrame2();
             }
         }
 
