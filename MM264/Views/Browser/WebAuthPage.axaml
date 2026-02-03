@@ -1,0 +1,16 @@
+<wpflikeavalonianavigation:Page xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:wpflikeavalonianavigation="using:WpfLikeAvaloniaNavigation"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="MM264.WebAuthPage">
+	<StackPanel Spacing="10" Margin="10,10,10,10" Height="300" Width="300" >
+		<TextBlock Text="Welcome to Web" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+		<TextBlock Text="Login"/>
+		<TextBox x:Name="Login_Box"/>
+		<TextBlock Text="Password"/>
+		<TextBox x:Name="Password_Box" PasswordChar="-"/>
+		<Button Content="Войти" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Background="LightGreen" x:Name="Auth_Button" Click="Auth_Button_OnClick" Height="35" Width="300"/>
+	</StackPanel>
+</wpflikeavalonianavigation:Page>

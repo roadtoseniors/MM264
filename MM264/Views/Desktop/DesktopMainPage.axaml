@@ -1,0 +1,66 @@
+﻿<wpflikeavalonianavigation:Page xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:wpflikeavalonianavigation="using:WpfLikeAvaloniaNavigation"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="MM264.DesktopMainPage">
+
+    <Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto,*">
+		<Border Grid.ColumnSpan="2" Height="48">
+			<DockPanel>
+                <Image Source="C:\Users\kekmaster\source\repos\MM264\MM264\Assets\Logo.png" DockPanel.Dock="Left" Height="40" Margin="16"/>
+
+                <DropDownButton DockPanel.Dock="Right" Background="White" Content="{Binding CurrentUser.FullName}">
+					<DropDownButton.Flyout>
+                            <MenuFlyout>
+                                <MenuItem Background="DarkGray" Header="Мой профиль"/>
+                                <MenuItem Background="DarkGray" Header="Мой сессии"/>
+                                <MenuItem Background="DarkGray" Header="Выход"/>
+                            </MenuFlyout>
+                        </DropDownButton.Flyout>
+                </DropDownButton>
+            </DockPanel>
+        </Border>
+
+        <Border Grid.Row="1" Background="DarkGray">
+			<ScrollViewer>
+				<StackPanel>
+					<TextBlock Text="Навигация" FontSize="16" FontWeight="SemiBold" Margin="8,16,16,8"/>
+                    <Button Content="Главная" Background="DarkGray"/>
+                    <Button Content="Монитор ТА" Background="DarkGray" />
+                    <DropDownButton Content="Детальные отчеты" Background="DarkGray">
+						<DropDownButton.Flyout>
+                            <MenuFlyout>
+                            </MenuFlyout>
+                        </DropDownButton.Flyout>
+                    </DropDownButton>
+
+                    <DropDownButton Content="Учет ТЦМ" Background="DarkGray">
+						<DropDownButton.Flyout>
+                            <MenuFlyout>
+                            </MenuFlyout>
+                        </DropDownButton.Flyout>
+                    </DropDownButton>
+
+                    <DropDownButton Content="Администрирование" Background="DarkGray">
+						<DropDownButton.Flyout>
+                            <MenuFlyout>
+                                <MenuItem Background="DarkGray" Header="Торговые автоматы" x:Name="VendingMachine" Click="VendingMachine_Click"/>
+                                <MenuItem Background="DarkGray" Header="Компании" />
+                                <MenuItem Background="DarkGray" Header="Пользователи" />
+                                <MenuItem Background="DarkGray" Header="Модемы" />
+                                <MenuItem Background="DarkGray" Header="Допольнительные" />
+                            </MenuFlyout>
+                        </DropDownButton.Flyout>
+                    </DropDownButton>
+                </StackPanel>
+            </ScrollViewer>
+        </Border>
+
+
+
+
+        <wpflikeavalonianavigation:Frame x:Name="DesktopFrame" Grid.Column="1" Grid.Row="1"/>
+    </Grid>
+</wpflikeavalonianavigation:Page>

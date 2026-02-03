@@ -1,0 +1,110 @@
+<wpflikeavalonianavigation:Page xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:wpflikeavalonianavigation="using:WpfLikeAvaloniaNavigation"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="MM264.CalendarPage">
+    <Grid Margin="20"
+          RowDefinitions="Auto,Auto,*">
+
+        <!-- Верхняя панель -->
+        <DockPanel Grid.Row="0">
+
+            <!-- Назад -->
+            <Button
+                x:Name="Back"
+                Content="← Назад"
+                Width="120"
+                Height="40"
+                Click="Back_Click"
+                HorizontalAlignment="Left"/>
+
+            <!-- Заголовок -->
+            <TextBlock
+                Text="Календарь обслуживания"
+                FontSize="22"
+                FontWeight="Bold"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"/>
+
+        </DockPanel>
+
+        <!-- Фильтры -->
+        <StackPanel
+            Grid.Row="1"
+            Orientation="Horizontal"
+            Spacing="15"
+            Margin="0,20,0,20">
+
+            <!-- Выбор ТА -->
+            <ComboBox
+                Width="250"
+                PlaceholderText="Все торговые автоматы"/>
+
+            <!-- Режим отображения -->
+            <ComboBox Width="150" SelectedIndex="1">
+                <ComboBoxItem Content="Неделя"/>
+                <ComboBoxItem Content="Месяц"/>
+                <ComboBoxItem Content="Год"/>
+            </ComboBox>
+
+        </StackPanel>
+
+        <!-- Календарь -->
+        <ScrollViewer Grid.Row="2">
+
+            <!-- Годовой режим: 12 месяцев -->
+            <UniformGrid Columns="4" Rows="3">
+
+                <!-- Месяц -->
+                <Border Margin="6" BorderBrush="#CCCCCC"
+                        BorderThickness="1"
+                        CornerRadius="6"
+                        Padding="8">
+
+                    <StackPanel Spacing="6">
+
+                        <TextBlock
+                            Text="Январь"
+                            FontWeight="Bold"
+                            HorizontalAlignment="Center"/>
+
+                        <!-- Плановое ТО -->
+                        <Border Background="#4CAF50" CornerRadius="4" Padding="4">
+                            <TextBlock Text="ТА-12 Плановое ТО"
+                                       Foreground="White"/>
+                        </Border>
+
+                        <!-- Приближается -->
+                        <Border Background="#FFEB3B" CornerRadius="4" Padding="4">
+                            <TextBlock Text="ТА-18 Скоро"/>
+                        </Border>
+
+                        <!-- Просрочено -->
+                        <Border Background="#F44336" CornerRadius="4" Padding="4">
+                            <TextBlock Text="ТА-21 Просрочено"
+                                       Foreground="White"/>
+                        </Border>
+
+                    </StackPanel>
+                </Border>
+
+                <!-- Остальные месяцы (заглушки) -->
+                <Border BorderBrush="#CCCCCC" BorderThickness="1" CornerRadius="6"/>
+                <Border BorderBrush="#CCCCCC" BorderThickness="1" CornerRadius="6"/>
+                <Border BorderBrush="#CCCCCC" BorderThickness="1" CornerRadius="6"/>
+                <Border BorderBrush="#CCCCCC" BorderThickness="1" CornerRadius="6"/>
+                <Border BorderBrush="#CCCCCC" BorderThickness="1" CornerRadius="6"/>
+                <Border BorderBrush="#CCCCCC" BorderThickness="1" CornerRadius="6"/>
+                <Border BorderBrush="#CCCCCC" BorderThickness="1" CornerRadius="6"/>
+                <Border BorderBrush="#CCCCCC" BorderThickness="1" CornerRadius="6"/>
+                <Border BorderBrush="#CCCCCC" BorderThickness="1" CornerRadius="6"/>
+                <Border BorderBrush="#CCCCCC" BorderThickness="1" CornerRadius="6"/>
+                <Border BorderBrush="#CCCCCC" BorderThickness="1" CornerRadius="6"/>
+
+            </UniformGrid>
+        </ScrollViewer>
+
+    </Grid>
+</wpflikeavalonianavigation:Page>

@@ -1,0 +1,54 @@
+﻿<wpflikeavalonianavigation:Page xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:wpflikeavalonianavigation="using:WpfLikeAvaloniaNavigation"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="MM264.WebPageChoXotite">
+    <Grid Margin="20"
+          RowDefinitions="Auto,*">
+
+        <!-- Заголовок -->
+        <TextBlock
+            Text="Панель управления франчайзера"
+            FontSize="24"
+            FontWeight="Bold"
+            HorizontalAlignment="Center"
+            Margin="0,0,0,30"/>
+
+        <!-- Главное меню -->
+        <StackPanel
+            Grid.Row="1"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            Width="350"
+            Spacing="15">
+
+            <Button
+                Content="Торговые автоматы"
+                Height="50"
+                FontSize="16"
+                Background="#4CAF50"
+                Foreground="White"
+                Click="TA_Button_Click"/>
+
+            <Button
+                Content="Календарь обслуживания"
+                Height="50"
+                FontSize="16"
+                Background="#4CAF50"
+                Foreground="White"
+                Click="Calendar_Button_Click"/>
+
+            <Button
+                Content="График работ"
+                Height="50"
+                FontSize="16"
+                Background="#4CAF50"
+                Foreground="White"
+                Click="Grafic_Button_Click"/>
+
+        </StackPanel>
+
+    </Grid>
+</wpflikeavalonianavigation:Page>

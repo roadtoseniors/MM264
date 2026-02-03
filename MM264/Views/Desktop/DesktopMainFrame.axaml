@@ -1,0 +1,93 @@
+﻿<wpflikeavalonianavigation:Page xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:wpflikeavalonianavigation="using:WpfLikeAvaloniaNavigation"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="MM264.DesktopMainFrame">
+  <Grid RowDefinitions="Auto,*" ColumnDefinitions="*">
+    <!-- Верхняя черная панель -->
+    <Border Background="Black" Grid.Row="0" Height="48">
+      <Grid>
+        <TextBlock Text="ООО Торговые автоматы" Foreground="White" FontWeight="SemiBold" VerticalAlignment="Center" Margin="10,0,0,0"/>
+        <TextBlock Text="Главная" Foreground="White" FontWeight="SemiBold" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0"/>
+      </Grid>
+    </Border>
+
+    <!-- Основное содержимое -->
+    <Grid Grid.Row="1" Margin="10" RowSpacing="10" ColumnSpacing="10">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="2*"/>
+        <RowDefinition Height="2*"/>
+      </Grid.RowDefinitions>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="2*"/>
+        <ColumnDefinition Width="2*"/>
+        <ColumnDefinition Width="1*"/>
+      </Grid.ColumnDefinitions>
+
+      <!-- Верхний ряд -->
+      <Expander Grid.Row="0" Grid.Column="0" Header="Эффективность сети" IsExpanded="True" VerticalAlignment="Stretch">
+        <Border Background="White" CornerRadius="4" Padding="10" VerticalAlignment="Stretch">
+          <StackPanel VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+            <Image Source="C:\Users\kekmaster\source\repos\MM264\MM264\Assets\grafic.png" Width="100" Stretch="Uniform"/>
+            <TextBlock Text="Работающих автоматов - 100%" FontSize="12" HorizontalAlignment="Center"/>
+          </StackPanel>
+        </Border>
+      </Expander>
+
+      <Expander Grid.Row="0" Grid.Column="1" Header="Состояние сети" IsExpanded="True" VerticalAlignment="Stretch">
+        <Border Background="White" CornerRadius="4" Padding="10" VerticalAlignment="Stretch">
+          <StackPanel VerticalAlignment="Stretch" HorizontalAlignment="Center">
+            <Image Source="C:\Users\kekmaster\source\repos\MM264\MM264\Assets\grafic2.png" Width="100" Stretch="Uniform"/>
+          </StackPanel>
+        </Border>
+      </Expander>
+
+      <Expander Grid.Row="0" Grid.Column="2" Header="Сводка" IsExpanded="True" VerticalAlignment="Stretch">
+        <Border Background="White" CornerRadius="4" Padding="10" VerticalAlignment="Stretch">
+          <StackPanel VerticalAlignment="Stretch">
+            <TextBlock Text="Денег в ТА: 27595 р."/>
+            <TextBlock Text="Сдача в ТА: 12129 р."/>
+            <TextBlock Text="Выручка, сегодня: 11810 р."/>
+            <TextBlock Text="Выручка, вчера: 13360 р."/>
+            <TextBlock Text="Инкассировано, сегодня: 8145 р."/>
+            <TextBlock Text="Инкассировано, вчера: 9690 р."/>
+            <TextBlock Text="Обслужено ТА, сег./вчера: 2 / 2"/>
+          </StackPanel>
+        </Border>
+      </Expander>
+
+      <!-- Нижний ряд -->
+      <Expander Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Header="Динамика продаж" IsExpanded="True" VerticalAlignment="Stretch">
+        <Border Background="White" CornerRadius="4" Padding="10" VerticalAlignment="Stretch">
+          <StackPanel VerticalAlignment="Stretch">
+            <StackPanel Orientation="Horizontal" Spacing="5" Margin="0,0,0,5">
+              <Button Content="По сумме" Background="Blue"/>
+              <Button Content="По количеству"/>
+            </StackPanel>
+            <Image Source="C:\Users\kekmaster\source\repos\MM264\MM264\Assets\dinamic.png" Width="200" Stretch="Uniform"/>
+          </StackPanel>
+        </Border>
+      </Expander>
+
+      <Expander Grid.Row="1" Grid.Column="1" Header="Новости" IsExpanded="True" VerticalAlignment="Stretch">
+        <Border Background="White" CornerRadius="4" Padding="10" VerticalAlignment="Stretch">
+          <StackPanel VerticalAlignment="Stretch">
+            <ItemsControl>
+              <ItemsControl.Items>
+                <TextBlock Text="29.01.25 - Терминалы KitPos получили эквайринг от Сбера"/>
+                <TextBlock Text="31.12.24 - Новогоднее поздравление от KIT Vending / KIT Shop"/>
+                <TextBlock Text="28.12.24 - Ставки НДС 5% и 7% для УСН"/>
+                <TextBlock Text="04.12.24 - Релиз новой CRM-системы KIT Shop"/>
+                <TextBlock Text="27.11.24 - Новые модели снежных автоматов от KIT Vending"/>
+                <TextBlock Text="20.11.24 - Получение сертификата PCI DSS 4.0.1"/>
+              </ItemsControl.Items>
+            </ItemsControl>
+          </StackPanel>
+        </Border>
+      </Expander>
+
+    </Grid>
+  </Grid>
+</wpflikeavalonianavigation:Page>

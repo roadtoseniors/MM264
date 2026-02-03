@@ -1,0 +1,99 @@
+<wpflikeavalonianavigation:Page xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:wpflikeavalonianavigation="using:WpfLikeAvaloniaNavigation"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="MM264.GraficPage">
+
+    <Grid Margin="20" RowDefinitions="Auto,Auto,*">
+
+        <!-- Верхняя панель -->
+        <DockPanel Grid.Row="0">
+
+            <!-- Кнопка назад -->
+            <Button
+                x:Name="Back"
+                Content="← Назад"
+                Width="120"
+                Height="40"
+                Click="Back_Click"
+                HorizontalAlignment="Left"/>
+
+            <!-- Заголовок страницы -->
+            <TextBlock
+                Text="График работ"
+                FontSize="22"
+                FontWeight="Bold"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"/>
+        </DockPanel>
+
+        <!-- Фильтры -->
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Spacing="15" Margin="0,20,0,20">
+
+            <!-- Выбор сотрудника -->
+            <ComboBox Width="200" SelectedIndex="0">
+                <ComboBoxItem Content="Все сотрудники"/>
+                <ComboBoxItem Content="Один сотрудник"/>
+            </ComboBox>
+
+            <!-- Режим отображения -->
+            <ComboBox Width="150" SelectedIndex="0">
+                <ComboBoxItem Content="День"/>
+                <ComboBoxItem Content="Неделя"/>
+            </ComboBox>
+
+        </StackPanel>
+
+        <!-- Календарь / расписание -->
+        <ScrollViewer Grid.Row="2">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <!-- Временная шкала / placeholder -->
+                <TextBlock Grid.Row="0"
+                           Text="Интерактивный календарь сотрудников"
+                           HorizontalAlignment="Center"
+                           FontStyle="Italic"
+                           Foreground="Gray"/>
+
+                <!-- Список сотрудников и задач -->
+                <Grid Grid.Row="1" ColumnDefinitions="*,*" Margin="0,10,0,0" RowSpacing="10" ColumnSpacing="10">
+
+                    <!-- Список сотрудников -->
+                    <ListBox x:Name="EmployeesList">
+                        <ListBoxItem Content="Инженер 1"/>
+                        <ListBoxItem Content="Инженер 2"/>
+                    </ListBox>
+
+                    <!-- Задачи / заявки -->
+                    <ListBox Grid.Column="1" x:Name="TasksList">
+                        <ListBoxItem>
+                            <Border Background="#F44336" CornerRadius="4" Padding="4">
+                                <TextBlock Text="ТА-44 Авария" Foreground="White"/>
+                            </Border>
+                        </ListBoxItem>
+                        <ListBoxItem>
+                            <Border Background="#4CAF50" CornerRadius="4" Padding="4">
+                                <TextBlock Text="ТА-12 Плановое ТО" Foreground="White"/>
+                            </Border>
+                        </ListBoxItem>
+                    </ListBox>
+
+                </Grid>
+            </Grid>
+        </ScrollViewer>
+
+        <!-- Кнопка «Сформировать» -->
+        <Button Grid.Row="3"
+                Content="Сформировать"
+                Width="150"
+                Height="40"
+                HorizontalAlignment="Right"
+                Margin="0,10,0,0"/>
+    </Grid>
+</wpflikeavalonianavigation:Page>

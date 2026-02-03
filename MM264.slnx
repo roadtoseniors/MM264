@@ -1,0 +1,9 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path="Directory.Build.props" />
+  </Folder>
+  <Project Path="MM264.Browser/MM264.Browser.csproj" />
+  <Project Path="MM264.Desktop/MM264.Desktop.csproj" />
+  <Project Path="MM264/MM264.csproj" />
+  <Project Path="WebAPI/WebAPI.csproj" />
+</Solution>

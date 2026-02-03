@@ -1,0 +1,47 @@
+<wpflikeavalonianavigation:Page xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:wpflikeavalonianavigation="using:WpfLikeAvaloniaNavigation"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="MM264.TAPage">
+    <Grid Margin="20"
+          RowDefinitions="Auto,*">
+
+        <!-- Верхняя панель -->
+        <DockPanel Grid.Row="0">
+
+            <!-- Кнопка назад -->
+            <Button
+                x:Name="Back"
+                Content="← Назад"
+                Width="120"
+                Height="40"
+                Click="Back_Click"
+                HorizontalAlignment="Left"/>
+
+            <!-- Заголовок -->
+            <TextBlock
+                Text="Торговые автоматы"
+                FontSize="22"
+                FontWeight="Bold"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"/>
+
+        </DockPanel>
+
+        <!-- Контент страницы (пока пусто) -->
+        <Border Grid.Row="1"
+                Margin="0,20,0,0"
+                BorderBrush="#DDDDDD"
+                BorderThickness="1"
+                CornerRadius="8">
+            <TextBlock
+                Text="Контент страницы ТА"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Foreground="Gray"/>
+        </Border>
+
+    </Grid>
+</wpflikeavalonianavigation:Page>
